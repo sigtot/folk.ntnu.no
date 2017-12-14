@@ -1,0 +1,97 @@
+Side 1 av 5
+
+Norges teknisk-naturvitenskapelige universitet
+Institutt for datateknikk og informasjonsvitenskap
+
+EKSAMENSOPPGAVE I FAG TDT4160 – DATAMASKINER GRUNNKURS
+
+Faglig kontakt under eksamen:
+
+Gunnar Tufte
+
+Tlf.: 93440
+
+Eksamensdato:
+
+11. august 2006
+
+Eksamenstid:
+
+09.00 – 13.00
+
+Tillatte hjelpemiddel:
+
+D: Ingen trykte eller håndskrevne hjelpemiddel tillatt. Bestemt, enkel
+kalkulator tillatt.
+
+Språkform: Bokmål
+
+Side 2 av 5
+
+Oppgave 1 – Lager – 25 % (5 % på a, b og c; 10 % på d)
+a) Forklar forskjellen mellom little endian og big endian.
+Hvorfor kan det være viktig å vite hvilken endian en prosessor bruker?
+b) Minnebrikker bruker gjerne D-flip-flops til å lagre data. Hver D-flip-flop har 4
+innganger/utganger: D (data inn), Q (data ut), CK (klokke), CLR (nullstill). Forklar hvordan en
+4-Mbit minnebrikke kan være organisert slik at den slipper å ha 16 millioner (4*4M) pinner.
+c) Forklar forskjellen mellom RAID 4 og RAID 5.
+d) Forklar fordeler og ulemper ved direkte avbildning (direct mapping) versus fullt assosiativ
+avbildning. Hvorfor er sett-assosiativ avbildning et godt kompromiss?
+
+Oppgave 2 – Dataoverføring – 10 %
+a) Hva gjør en DMA-kontroller? Hvilke fordeler oppnås ved å bruke en slik?
+b) PCI Express overfører data over serielle forbindelser (lanes). Enheter som trenger å overføre
+store mengder data, kan bruke flere slike forbindelser i parallell. Forklar hvordan denne
+parallelliteten skiller seg fra parallell overføring i tradisjonelle busser som for eksempel PCI.
+
+Oppgave 3 – Mikroarkitektur – 35 % (5 % på a, 10 % på b, 20 % på c)
+a) Forklar forskjellen mellom statisk og dynamisk forgreningspredikering.
+Gi ett eksempel på teknikker for hver av disse to kategoriene.
+b) Lag mikroinstruksjon(er) for følgende IJVM-operasjon (se bort fra Addr og JAM):
+SP = TOS + OPC
+Se vedlegget for oversikt over utførende enhet, funksjonstabell for ALU og formatet på
+mikroinstruksjoner.
+c) Figuren under viser et scoreboard for en superskalar prosessor som bruker i-rekkefølgetildeling og i-rekkefølge-fullføring (in-order issue, in-order completion). Hvordan vil
+scoreboardet se ut for klokkesyklus 5 og 6? Anta følgende:
+•
+•
+•
+•
+•
+•
+
+Instruksjon 5 er R7 = R1*R2
+Instruksjon 6 er R1 = R0-R2
+Addisjon og subtraksjon tar 2 klokkesykler
+Multiplikasjon tar 3 klokkesykler
+Det er alltid en passende funksjonell enhet ledig
+Maksimalt 2 instruksjoner kan dekodes / starte utføring (issue) hver klokkesyklus
+
+Side 3 av 5
+
+Figur 1: Scoreboard
+
+Oppgave 4 – Instruksjonssettarkitektur – 10 %
+a) Forklar hvordan registeradressering fungerer.
+Hvorfor er dette et populært adresseringsmodus?
+b) Hva brukes templatefeltet i instruksjonsformatet til IA-64 til?
+
+Oppgave 5 – Diverse – 20 % (5 % på a, 15 % på b)
+a) Forklar forskjellen mellom tolking (interpreting) og oversetting (compiling / translation).
+Gi ett eksempel på fornuftig bruk av hver av disse.
+b) Beskriv kort de viktigste forskjellene mellom Pentium 4 og UltraSPARC III på ISA-nivået.
+Gjør deretter det samme for mikroarkitektur-nivået.
+
+Side 4 av 5
+
+Vedlegg
+
+Figur 2: Utførende enhet (IJVM)
+
+Side 5 av 5
+
+Figur 3: Funksjonstabell for ALU (IJVM)
+
+Figur 4: Mikroinstruksjonsformat (IJVM)
+
+

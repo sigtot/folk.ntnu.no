@@ -1,0 +1,431 @@
+Norwegian University of Science and Technology
+Faculty of Information Technology, Mathematics and Electrical Engineering
+The Department of Computer and Information Science
+
+TDT4160
+D ATAMASKINER GRUNNKURS
+E KSAMEN
+8. AUGUST, 2007, 09:00–13:00
+
+Kontakt under eksamen:
+Marius Grannæs 73590670
+Tillatte hjelpemidler:
+D.
+Ingen trykte eller handskrivne hjelpemiddel er tillat.
+Enkel godkjent kalkulator er tillete.
+Målform:
+Nynorsk
+Viss ikkje anna er gitt tel deloppgåver likt.
+
+Page 1 of 16
+
+O PPGÅVE 1: D ATAMASKINER GENERELT (20%)
+I Figur 1 er ei maskin med så kalla "Von Neumann architecture” frå
+rundt 1945 skissert.
+a. Forklar kort kva som var revolusjonerande med denne løysinga.
+
+Figur 1: Von Neumann architecture.
+b. Forklar kort kva oppgåve dei ulike delene i blokkskjemet har.
+c. Kva skil verkemåten og prinsippa som von Neumann skisserte frå
+moderne prosessorar?
+
+O PPGÅVE 2: M IKROARKITEKTUR OG MIKROINSTRUK SJONAR (20% (5% PÅ A OG B ; 10% PÅ C ))
+Bruk vedlagte diagram og tabellar for IJVM til å løyse oppgåvene.
+a. Forklar funksjonen til Felta Addr og J (JAM) i MIR (MicroInstruction
+Register).
+b. IJVM sin styreeining nyttar "microprogram”. Ta utgangspunkt i skissa i Figur 4 og forklar kva som er karakteristisk ved denne løysinga.
+Kva alternativ løysing eksisterar og kva karakteriserar eit mogleg alternativ?
+
+Page 2 of 16
+
+c. Register H inneheld hex(AA00).
+Register TOS innheld hex(5500).
+Register OPC innheld hex(A00A).
+Register SP innheld hex(7FFF).
+Kva ligg i register H, TOS, OPC og SP etter at dei to følgjande mikroinstruksjonane er utført?
+Mikroinstruksjon 1: ALU: 010100, C: 100000000, Mem: 0, B: 0111
+Mikroinstruksjon 2: ALU: 111100, C: 001000000, Mem: 0, B: 1000
+Sjå vekk frå felta Addr og J i mikroinstruksjonsformatet.
+
+O PPGÅVE 3: A UKE YTING (20%)
+a. Kva tyder det at ein prosessor er superskalar?
+b. Kva meinast med omgrepa instruksjonsnivåparallelitet og prosessornivåparallelitet?
+c. Anta at ein prosessor har eit samleband med tre trinn som vist i Figur 2(a). Kvart trinn i samlebandet har ein gitt forsinking. I Figur 2(b)
+er eit fem-trinns samleband vist med gitte trinn forsinkelsar. Kva er
+maksimal klokkefrekvens for dei to samlebanda?
+t = 20ns
+t = 5ns
+
+Stage 1
+
+t = 25 ns
+
+t = 5ns
+
+t = 10ns
+
+t = 5ns
+
+t = 2.5ns
+
+t = 5ns
+
+t = 7.5ns
+
+t = 5ns
+
+Stage 2
+
+Stage 3
+
+Stage 1
+
+Stage 2
+
+Stage 3
+
+Stage 4
+
+Stage 5
+
+(a) Samleband med tre
+steg.
+
+(b) Samleband med fem steg.
+
+Figur 2: Samleband med gitt forsinking.
+
+Page 3 of 16
+
+O PPGÅVE 4: S UPERSKALARE PROSESSORAR OG C HIP M ULTI PROSESSORER (CMP) (10%)
+a. Eit program som utfører fire operasjonar:
+1 R3 = R3 * R5
+2 R4 = R3 + 1
+3 R3 = R5 + 1
+4 R7 = R3 * R4
+R(nummer) viser til registernummer. Identifiser og forklar dataavhengnadar i programmet skissert over.
+b. Ein CMP kan ha heterogene eller homogene kjernar. Kva meinast
+med dette?
+
+Page 4 of 16
+
+O PPGÅVE 5: D IVERSE (30% (10% PÅ A ; 4% PÅ B — F ))
+I oppgåve b — f skal du ta stilling til om påstandane er korrekte eller ikkje.
+Korrekte svar gir 4% utteljing, feil svar gir 2% straff. Veit ikkje (ikkje svar)
+gir inga utteljing (eller straff).
+a. I Figur 3 er EPROM, RAM og PIO kobla til ein felles buss. Alle einingane har aktivt lågt (logisk ”0”) CS (Chip Select) signal.
+A0
+
+A15
+
+CS
+
+CS
+
+2K
+EPROM
+
+2K
+RAM
+
+CS
+PIO
+
+Figur 3: Adressedekoding.
+Adresseområde for EPROM, RAM og PIO skal vere:
+• EPROM: hex(0000) - hex(07FF)
+• RAM: hex(8000) - hex (87FF)
+• PIO: hex(C000) - hex(FFFF)
+MEN det virkar ikkje som tenkt: Kva er feil i Figur 3 og kva kan gjerast
+for at verkemåten skal verte korrekt?
+
+Page 5 of 16
+
+b. IJVM har ein multiplikasjonseining.
+c. RISC-prosessorar nyttar ofte "hardwired” styreeining.
+d. I eit ”scoreboard” kan ein lese ut antal gonger eit register er brukt
+som kilde av instruksjonane som er "aktive” (under utføring).
+e. IJVM har meir til felles med CISC enn RISC maskiner.
+f. Ein versjon av prosessoren 8051 har multipleksa 8 bit databuss og 16
+bit adressebuss. Denne versjonen av 8051 kan adressere 64KB minne.
+
+Page 6 of 16
+
+IJVM vedlegg
+
+Page 7 of 16
+
+Figur 4: Blokkdiagram (IJVM).
+Page 8 of 16
+
+Figur 5: Mikroinstruksjonsformat (IJVM).
+
+Page 9 of 16
+
+A NSWER K EY
+
+FOR
+
+Page 1 of 16
+
+T HE E XAM
+
+O PPGÅVE 1: D ATAMASKINER GENERELT (20%)
+I Figur 1 er ei maskin med så kalla "Von Neumann architecture” frå
+rundt 1945 skissert.
+a. Forklar kort kva som var revolusjonerande med denne løysinga.
+Answer: Viktigast: Programm er lagra i minne på lik linje med data,
+stored program machine",også utførande og kontroll eining osv.
+b. Forklar kort kva oppgåve dei ulike delene i blokkskjemet har.
+Answer: • ALU gir seg sjølv
+• Accumulator
+• Input Output brukar/omgivelsar
+• Control Unit FSM programm og data styrt
+• Memory Data og Programm er lagra her
+c. Kva skil verkemåten og prinsippa som von Neumann skisserte frå
+moderne prosessorar?
+Answer: Svært lite. Kan eventuelt vere data/programm organisering
+(Hardward arkitektur)
+
+O PPGÅVE 2: M IKROARKITEKTUR OG MIKROINSTRUK SJONAR (20% (5% PÅ A OG B ; 10% PÅ C ))
+Bruk vedlagte diagram og tabellar for IJVM til å løyse oppgåvene.
+a. Forklar funksjonen til Felta Addr og J (JAM) i MIR (MicroInstruction
+Register).
+Answer: • Addr: Addressa til mulig neste mikroinstruksjon.
+• J: Bestemer korleis neste instruksjon vert velt (betinga hopp).
+b. IJVM sin styreeining nyttar "microprogram”. Ta utgangspunkt i skissa i Figur 4 og forklar kva som er karakteristisk ved denne løysinga.
+Kva alternativ løysing eksisterar og kva karakteriserar eit mogleg alternativ?
+Answer:
+
+• Microprogram: i prinsippe programmerbar, ein instruksjon bygd opp av microinstruksjonar lagra i eit minne. Instruksjonar innheld kontroll signal og adressa til neste mikroinstruksjon. Ein instruksjon angir adressa til fyrste mikroinstruksjon. OSV. enklare å lage kompliserte lange instruksjonar, ikkje så rask. CISC.
+Page 2 of 16
+
+• Hardwired: Maskinvare FSM og/eller kombinatorikk, rask,
+logikk i maskinvare, best for enkle instruksjonar, fast implementasjon. RISC.
+
+Page 3 of 16
+
+c. Register H inneheld hex(AA00).
+Register TOS innheld hex(5500).
+Register OPC innheld hex(A00A).
+Register SP innheld hex(7FFF).
+Kva ligg i register H, TOS, OPC og SP etter at dei to følgjande mikroinstruksjonane er utført?
+Mikroinstruksjon 1: ALU: 010100, C: 100000000, Mem: 0, B: 0111
+Mikroinstruksjon 2: ALU: 111100, C: 001000000, Mem: 0, B: 1000
+Sjå vekk frå felta Addr og J i mikroinstruksjonsformatet.
+Answer: 1: Laste TOS inn i H ALU: 010100, C: 100000000, Mem: 0, B:
+0111
+2 addere H + OPC skriv til TOS ALU: 111100 (A+B) C: 001000000
+(TOS) Mem: 000 (ingen mem opprasjon) B: 1000 (8 OPC)
+•
+•
+•
+•
+
+H: hex(5500)
+TOS: hex(F50A)
+OPC: hex(A00A)
+SP: hex(7FFF)
+
+O PPGÅVE 3: A UKE YTING (20%)
+(i) Kva tyder det at ein prosessor er superskalar?
+Answer: Duplisering av CPU komponentar
+(ii) Kva meinast med omgrepa instruksjonsnivåparallelitet og prosessornivåparallelitet?
+Answer: Instruksjonsnivåparalelitet: ein prosessor utfører fleire
+instruksjonar samstundes. Prosessornivåparalitet: fleire prosessorar utfører instruksjonar samstundes.
+(iii) Anta at ein prosessor har eit samleband med tre trinn som vist
+i Figur 2(a). Kvart trinn i samlebandet har ein gitt forsinking. I
+Figur 2(b) er eit fem-trinns samleband vist med gitte trinn forsinkelsar. Kva er maksimal klokkefrekvens for dei to samlebanda?
+Answer: 3 trinn: 1/10ns, 5 trinn: 1/7.5ns.
+
+Page 4 of 16
+
+O PPGÅVE 4: S UPERSKALARE PROSESSORAR OG C HIP
+M ULTIPROSESSORER (CMP) (10%)
+(i) Eit program som utfører fire operasjonar:
+1
+2
+3
+4
+
+R3 = R3 * R5
+R4 = R3 + 1
+R3 = R5 + 1
+R7 = R3 * R4
+
+R(nummer) viser til registernummer. Identifiser og forklar dataavhengnadar i programmet skissert over.
+Answer: Avhengighet:
+WAR: (Antiavhengighet) Skriv-etter-les, I2 må lese R3 før verdien
+blir overskrevet av I3
+Problem hvis ein instruksjon skriv resultat før ein tidligare
+får lest operandar
+Ein CMP kan ha heterogene eller homogene kjernar. Kva meinast
+med dette?
+(ii) Answer: Ulike eller like kjerner på ein chip.
+
+Page 5 of 16
+
+O PPGÅVE 5: D IVERSE (30% (10% PÅ A ; 4% PÅ B —
+F ))
+I oppgåve b — f skal du ta stilling til om påstandane er korrekte eller
+ikkje. Korrekte svar gir 4% utteljing, feil svar gir 2% straff. Veit ikkje
+(ikkje svar) gir inga utteljing (eller straff).
+(i) I Figur 3 er EPROM, RAM og PIO kobla til ein felles buss. Alle
+einingane har aktivt lågt (logisk ”0”) CS (Chip Select) signal.
+Adresseområde for EPROM, RAM og PIO skal vere:
+• EPROM: hex(0000) - hex(07FF)
+• RAM: hex(8000) - hex (87FF)
+• PIO: hex(C000) - hex(FFFF)
+MEN det virkar ikkje som tenkt: Kva er feil i Figur 3 og kva kan
+gjerast for at verkemåten skal verte korrekt?
+Answer: RAM og ROM har overlappande adresseområde. Fjern
+2-inngangs OR krets i RAM adr-dekoding og bruk kun invertert A15. Figur ?? viser korleis rett adressedekoding kan sjå
+ut.
+
+Page 6 of 16
+
+(ii) IJVM har ein multiplikasjonseining.
+Answer: Nei, dette kan dei finne ut ved å sjå på ALU-tabellen i
+Figur 6
+(iii) RISC-prosessorar nyttar ofte "hardwired” styreeining.
+Answer: Ja, i den forenkla verden her er dette svaret. RISC har
+like lange enkle instruksjonar som gjer det mogleg å nytte
+hardwired styreeining.
+(iv) I eit ”scoreboard” kan ein lese ut antal gonger eit register er brukt
+som kilde av instruksjonane som er "aktive” (under utføring).
+Answer: Ja, ein del av felta i scoreboard skjema som er brukt som
+eksempel i buka og forelest.
+(v) IJVM har meir til felles med CISC enn RISC maskiner.
+Answer: Ja, forskjelig lengde moglegheit, instruksjonar, med forskjelig antal klokke tiks, ikkje typisk RISC adresering.
+(vi) Ein versjon av prosessoren 8051 har multipleksa 8 bit databuss og
+16 bit adressebuss. Denne versjonen av 8051 kan adressere 64KB
+minne.
+Answer: Ja, 16 bit adr.buss gir 64kB minne (1 byte i kvar adr).
+
+Page 7 of 16
+
+IJVM vedlegg
+
+Page 8 of 16
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 6: Funksjonstabell for ALU (IJVM).
+
+Page 9 of 16
+
+Figur 7: Timingdiagram (IJVM).
+
+Figur 8: Von Neumann architecture.
+
+Page 10 of 16
+
+t = 20ns
+t = 5ns
+
+Stage 1
+
+t = 25 ns
+
+t = 5ns
+
+t = 10ns
+
+t = 5ns
+
+t = 2.5ns
+
+t = 5ns
+
+t = 7.5ns
+
+t = 5ns
+
+Stage 2
+
+Stage 3
+
+Stage 1
+
+Stage 2
+
+Stage 3
+
+Stage 4
+
+Stage 5
+
+(a) Samleband med tre
+steg.
+
+(b) Samleband med fem steg.
+
+Figur 9: Samleband med gitt forsinking.
+
+A0
+
+A15
+
+CS
+2K
+EPROM
+
+CS
+2K
+RAM
+
+Figur 10: Adressedekoding.
+
+Page 11 of 16
+
+CS
+PIO
+
+A0
+
+A15
+
+CS
+2K
+EPROM
+
+CS
+2K
+RAM
+
+CS
+PIO
+
+Figur 11: Adressedekoding slik som det skal vere utan overlapping. No er
+adressedekodingen i samsvar med ønsket område for dei forskjelige einingane.
+
+Page 12 of 16
+
+Figur 12: Blokkdiagram (IJVM).
+Page 13 of 16
+
+Figur 13: Mikroinstruksjonsformat (IJVM).
+
+Page 14 of 16
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 14: Funksjonstabell for ALU (IJVM).
+
+Page 15 of 16
+
+Figur 15: Timingdiagram (IJVM).
+
+Page 16 of 16
+
+

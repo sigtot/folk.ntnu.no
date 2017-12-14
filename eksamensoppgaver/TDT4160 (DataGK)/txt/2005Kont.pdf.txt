@@ -1,0 +1,389 @@
+Side 1 av 9
+
+NORGES TEKNISK-NATURVITENSKAPELIGE UNIVERSITET
+INSTITUTT FOR DATATEKNIKK OG INFORMASJONSVITENSKAP
+
+Faglig kontakt under eksamen:
+Jon Olav Hauglid, Tlf 93440
+Institutt for datateknikk og informasjonsvitenskap, Gløshaugen
+
+EKSAMEN I EMNE TDT4160 DATAMASKINER GRUNNKURS
+17. AUGUST 2005
+KL. 09.00 – 13.00
+
+Hjelpemidler: D – Ingen trykte eller håndskrevne hjelpemidler tillatt. Bestemt, enkel
+kalkulator tillatt.
+
+Sensuren faller 7. september 2005.
+Resultater gjøres kjent på http://studweb.ntnu.no/ og sensurtelefon 810 48 014.
+
+Totalt antall sider: 9
+
+Prosentsatser viser hvor mye hver oppgave teller innen settet.
+
+Lykke til!
+
+Side 2 av 9
+
+Oppgave 1 – Flervalgsoppgaver (30%)
+Bruk svararket bakerst i oppgaveteksten for å svare på denne oppgaven. Du kan få nytt ark av
+eksamensvaktene dersom du trenger dette. Poengberegning per spørsmål: Riktig svar 2 poeng,
+galt svar gir -1 poeng, blankt svar gir 0 poeng. NB! Det er ikke mulig å gardere ved å krysse
+av flere alternativer. Dette gir i så fall 0 poeng. Kun ett alternativ er korrekt på hvert spørsmål.
+1) Hvor mange assemblerinstruksjoner er det i en mikroinstruksjon?
+a) Dette er avhengig av instruksjonssettarkitekturen (ISA)
+b) Spørsmålet gir ikke mening fordi en assemblerinstruksjon består av flere
+mikroinstruksjoner
+c) Tre, en for hver fase (load, execute, store)
+d) Dette er avhengig av størrelse på hurtiglager (eng. cache)
+2) Enkelte maskiner har noe som heter segmentregister, hva brukes det til?
+a) Peker på register som skal leses i en registerfil
+b) Brukes av hurtiglager for å vite hvor data skal ligge i hovedlager
+c) Holder øverste bit i en adresse for å få større adresserom
+d) Holder nederste bit i en adresse for å vite relasjon til hurtiglager
+3) Hva er riktig om samlebånd (eng. pipelines)?
+a) Samlebånd øker hastigheten for hver enkelt instruksjon isolert sett
+b) Samlebånd i prosessorer benyttes ikke lengre, dette er gammel teknologi
+c) Målet med et samlebånd er å utføre instruksjoner i parallell
+d) Samlebånd gjør at prosessoren gjør ferdig flere instruksjoner per klokkesykel
+4) Hva er FEIL om samlebånd?
+a) Klokkefrekvensen til en prosessor med samlebånd er begrenset av summen av
+tiden samlebåndet bruker i de ulike trinnene
+b) Klokkefrekvensen til en prosessor med samlebånd er begrenset av det tregeste
+trinnet
+c) Ved å innføre samlebånd kan frekvensen skrus opp fordi hvert enkelt trinn blir
+enklere
+d) En prosessor har samme klokkefrekvens for de ulike trinnene
+5) Dersom du har et vanlig (in-order execution) samlebånd, hvilke dataavhengigheter vil
+skape problemer i følgende program (Dark-syntaks – se oppgave 5)?
+ADD $1, $2, $3
+ADD $4, $2, $3
+a) Avhengigheten på grunn av register 2
+b) Avhengigheten på grunn av register 3
+c) Avhengigheten på grunn av register 1
+d) Det finnes ingen avhengighet
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+Side 3 av 9
+6) Hva skiller indirekte adresseringsmodus fra direkte adresseringsmodus (velg det
+alternativet som er mest riktig)?
+a) Indirekte er enklere enn direkte adressering fordi indirekte adressering krever et
+ekstra oppslag
+b) Indirekte adressering adresserer relativt til stakkregisteret, mens direkte
+adressering adresserer relativt til instruksjonsregisteret
+c) Direkte adressering gir lengre kildekode, og moderne prosessorer benytter kun
+indirekte adressering
+d) Ved indirekte adressering beregnes adressen som skal aksesseres ved kjøretid,
+mens ved direkte adressering er adressen gitt av assemblerkoden
+7) Hvorfor snakker man om 1ers komplement og 2ers komplement?
+a) De to måtene å kode tall på benyttes i forskjellige regneoperasjoner
+b) Det er lettere for en datamaskin å addere to tall som er på 2ers komplement enn
+1ers komplement
+c) 1ers komplement har større tallområde enn 2ers komplement
+d) 1ers komplement er tenkt til 1-tallssystemet, mens 2ers komplement er tenkt til 2tallssystemet
+8) Hvilken prosessortype har som oftest kortest instruksjonsord?
+a) Akkumulatormaskin
+b) Load/store-maskin
+c) Stakkmaskin
+9) Hva er et instruksjonsregister?
+a) Mikroprosessoren leser instruksjonen som skal utføres til dette registret
+b) Instruksjonen benytter dette registret til å lagre heltall
+c) Instruksjonen benytter dette registret til å lagre både heltall og flyttall
+d) Instruksjonsregisteret angir adressen til neste instruksjon som skal utføres.
+10) Hvordan lagres data i hurtigminnet (SRAM) på en PC?
+a) Hver bit ligger lagret som strøm i en transistor
+b) Hver bit ligger lagret som ladning i en kondensator
+c) Hver bit ligger lagret i to invertere som er koblet mot hverandre for å låse data
+d) Data ligger lagret som strøm i magnetspoler
+11) Hvis man har to ulike datamaskiner som utfører like mange instruksjoner per sekund, hva
+kan man si om de to maskinene?
+a) Antall MIPS (millions of instructions per second) for de to maskinene er like
+b) Ytelsen er lik
+c) Maskinene er like
+d) Den maskinen som er nyest er sannsynligvis raskest
+12) Hvordan programmerer man en mikroprosessor med samlebånd?
+a) Man må passe seg for ”farer” (eng. hazards) i enkelte arkitekturer
+b) Man må spesifisere rekkefølgen på de ulike trinnene for hver instruksjon
+c) Til dette benyttes mikrokode
+d) Det skjer alltid i et høynivå språk som Java eller C (++).
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+Side 4 av 9
+13) Hvilket av følgende utsagn er mest FEIL om harddisker?
+a) Harddisker er mekaniske og tåler dårlig støt
+b) Harddisker er basert på optiske plater som roterer relativt raskt (ca 7200 RPM).
+c) Harddisker inneholder tosidige plater der data lagres
+d) Harddisker har roterende plater, og man må vente til den har rotert til riktig plass
+før data kan leses
+14) Hvordan henter en datamaskin vanligvis informasjon fra omgivelsene?
+a) Dette skjer ved at DRAM brikken er koblet til eksterne linjer
+b) Dette skjer ved at ALU enheten er koblet til eksterne linjer
+c) Dette skjer ved at porter er koblet på adresse og data bussen
+d) Statusregisteret blir oppdatert med eksterne verdier
+15) Hva er ulempen til USB?
+a) Man kan ikke ta utstyr fra en maskin og forvente at det fungerer på en annen
+maskin
+b) Protokollen er ikke laget for overføring av store datamengder, her er firewire
+raskere
+c) Det er lite datautstyr som støtter denne protokollen
+d) USB kablene blir dyre fordi det er mange ledere i selve kabelen
+
+Oppgave 2 – Direct memory access (DMA) (18%)
+a) Tegn en logisk skisse av en datamaskin (mikroprosessor, busser og dataminne)
+med en DMA-kontroller.
+b) Hvilke oppgave har DMA-kontrolleren?
+c) Beskriv de ulike trinnene i en typisk DMA-overføring. Hvilke signaler sendes
+mellom mikroprosessor og DMA-kontroller? Hvilke registre benyttes?
+
+Oppgave 3 – Seriell overføring (12%)
+a) Beskriv begrepene startbit, databit, paritetsbit og stoppbit (se figur
+under).
+
+b) Når benyttes ofte seriell dataoverføring framfor parallell dataoverføring?
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+Side 5 av 9
+
+Oppgave 4 – Mikroarkitektur og assembler (20%)
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+Side 6 av 9
+
+Bruk tabellene gitt ovenfor, som beskriver styreordet til en prosessor, og figuren på forrige
+side, som skisserer en utførende enhet i denne prosessoren, til å besvare oppgavene under.
+1. Hva blir styreordet for operasjonen R3 <- R6 + R5 + 1 der x skal beskrive
+ubrukte bits?
+2. Hva blir konsekvensene av mikrooperasjonen med styreordet
+111010xxxx0000100 der x beskriver ubrukte bits?
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+Side 7 av 9
+For en gitt CISC-prosessor kan MOV-instruksjonen i assembler være definert med flere
+adresseringsmodi slik:
+MOV Rn, #Imm
+; Immediate
+MOV Rn, Addr
+; Direkte
+MOV Rn, [Addr]
+; Indirekte
+MOV Rn, Rm
+; Register
+MOV Rn, [Rm]
+; Register indirekte
+MOV Rn, Addr(Rm)
+; Displacement
+PUSH Rn
+; Stakk push
+POP Rn
+; Stakk pop
+Rn/Rm indikerer register nummer n/m. Addr og Imm kan være tallverdier eller variabler.
+MOV fungerer slik: MOV til-operand, fra-operand
+Gitt et lite utdrag av en datamaskins lager på et gitt stadium som skal benyttes for å besvare
+spørsmålene under:
+
+Hovedlager
+
+Registre
+
+Definerte variabler
+
+Adresse
+
+Verdi
+
+Registernr
+
+Verdi
+
+Navn
+
+Verdi
+
+0
+
+71
+
+R0
+
+5
+
+teller
+
+64
+
+1
+
+54
+
+R1
+
+15
+
+i
+
+3
+
+2
+
+12
+
+R2
+
+8
+
+antall
+
+4
+
+3
+
+86
+
+R3
+
+7
+
+tab
+
+3
+
+4
+
+28
+
+R4
+
+8
+
+x
+
+7
+
+5
+
+56
+
+R5
+
+55
+
+retur
+
+11
+
+6
+
+3
+
+R6
+
+9
+
+7
+
+8
+
+R7
+
+35
+
+8
+
+13
+
+9
+
+7
+
+10
+
+45
+
+11
+
+82
+
+3. Hva vil verdien til R1 være etter følgende instruksjon: MOV R1, #45?
+4. Følgende instruksjoner skal utføres etter hverandre. Skriv ned hvilke registre hver
+enkelt instruksjon endrer og hva sluttverdiene til R4,R5,R6 og R7 vil være:
+PUSH
+MOV
+MOV
+POP
+MOV
+MOV
+
+R4
+R5,
+R7,
+R5
+R6,
+R7,
+
+#antall
+[R5]
+1(R5)
+10
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+Side 8 av 9
+
+Oppgave 5 – Assemblerprogrammering (20%)
+Skriv et assemblerprogram for Dark load/store maskin (se under) som gjør følgende jobb:
+for(i=0; i≤n; i++) a[i]=b[i]+i
+Anta at:
+$3 inneholder adressen for a[0], første elementet av en tabell med n+1 ord
+$4 inneholder verdien n.
+$5 inneholder adressen for b[0], første elementet av en tabell med n+1 ord
+
+Manual DARK load/store-arkitektur
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+Side 9 av 9
+
+Svarark for oppgave 1
+Studentnr:
+
+______________
+
+Fagnummer: ______________
+Eksamensdato: ______________
+Side ______ av _______
+
+a
+
+b
+
+c
+
+d
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+NB! Ikke glem å levere dette arket! Bla igjennom den papirbunken du gir
+fra deg til slutt, for å sjekke at svar på avkrysningsoppgaven er med.
+
+TDT4160 – EKSAMEN AUGUST 2005
+
+

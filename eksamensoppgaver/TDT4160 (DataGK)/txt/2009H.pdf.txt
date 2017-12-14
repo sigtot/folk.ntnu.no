@@ -1,0 +1,322 @@
+Norwegian University of Science and Technology
+Faculty of Information Technology, Mathematics and Electrical Engineering
+The Department of Computer and Information Science
+
+TDT4160
+
+D ATAMASKINER GRUNNKURS
+E KSAMEN
+9. DESEMBER , 2009, 09:00–13:00
+
+Kontakt under eksamen:
+Gunnar Tufte 73590356
+Tillatne hjelpemidler:
+D.
+Ingen trykte eller handskrivne hjelpemiddel er tillat.
+Enkel godkjent kalkulator er tillete.
+Målform:
+Nynorsk
+
+Side 1 av 11
+
+O PPGÅVE 1: D IGITALTLOGISKNIVÅ (25% (10% PÅ A OG C ; 5% PÅ B ))
+a. I figur 1 er EPROM og RAM kopla til ein felles buss. Finn adresseområde for EPROM og
+RAM og teikn minnekart. Alle einingane har aktivt lågt (logisk ”0”) CS (Chip Select) signal.
+A0
+
+Address bus
+
+Microcontroller
+
+A15
+
+CS
+R/W
+
+CS
+R/W
+D[7:0]
+
+CS
+R/W
+
+EPROM
+1
+
+Data bus
+
+D[7:0]
+
+RAM
+1
+
+EPROM
+2
+
+R/W
+Data[7:0]
+
+CS
+R/W
+D[7:0]
+
+D[7:0]
+
+RAM
+2
+D[7:0]
+
+8
+
+Figur 1: Adressedekoding.
+b. I eit forsøk på optimalisering endrast systemet til å nytte dobbelt så store minnebrikker
+(EPROM og RAM). Det nye systemet er vist i figur 2. Teikn minnekart for det nye systemet.
+A0
+
+Address bus
+
+Microcontroller
+
+A15
+
+CS
+R/W
+
+CS
+R/W
+D[7:0]
+
+D[7:0]
+RAM
+
+EPROM
+R/W
+Data[7:0]
+
+Data bus
+
+D[7:0]
+8
+
+Figur 2: Adressedekoding.
+c. Har optimaliseringsforsøket nokon innverknad på utføring av program som opphavleg var
+skrevet (og kompilert) for systemet vist i figur 1? Grunngi svaret.
+
+Side 2 av 11
+
+O PPGÅVE 2: M IKROARKITEKTUR OG MIKROINSTRUKSJONAR (30% (5%
+PÅ A OG C ; 10% PÅ B OG D ))
+Bruk vedlagte diagram og tabellar for IJVM til å løyse oppgåvene.
+a. Register PC har verdien hex(F0F0F00000) og MPC-registeret verdien hex(08). Kva brukast
+desse registera til? Kva angir verdiane?
+b. Kva er minimum mengd mikroinstruksjonar ein må bruke for å kopiere verdien i H-registeret
+til alle desse registera: OPC, TOS, CPP, LV, SP, PC, MDR og MAR? Grunngi svaret.
+c. Lag mikroinstruksjon(ar) for følgjande IJVM-operasjon:
+MAR = MDR + PC.
+Sjå vekk frå Addr- og J-felte i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem
+og B gitt i Figur 7.
+d.
+
+1 Lag mikroinstruksjon(ar) som kan teste om innehaldet i OPC ≥ MDR.
+2 Kva signal i mikroarkitekturen angir resultatet av testen?
+Sjå vekk frå Addr- og J-felta i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem
+og B gitt i Figur 7.
+
+Side 3 av 11
+
+O PPGÅVE 3: ISA- NIVÅ OG AUKE YTING (30% (10% PÅ A OG C ; 5% PÅ B
+OG D )))
+I ein tenkt arkitektur har ein definert eit format for instruksjonar som vist i figur 3. Det er
+definert at det eksisterar 16 brukarregister. Feltet register (figur 3 b) angir kva brukarregister som
+nyttast.
+a:
+opCode
+8 bit
+
+b:
+opCode
+
+address
+
+8 bit
+
+16 bit
+
+c:
+opCode
+
+register
+
+register
+
+register
+
+8 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+Figur 3: Instruksjonar.
+a. Kva type adressering kan ein utifrå figuren anta at nyttast? Forklar korleis adresseringen
+nyttast.
+b. Kva er det maksimale adresserommet for denne arkitekturen? Grunngi svaret.
+c. Kan ein seie noko om ordbredda (mengd bit maskina opererar på)? Grunngi svaret.
+d. I ein versjon av maskina er det ikkje samleband (pipeline) i instruksjonsutføringa (datapath).
+Tidsbruken for å køyre ein instruksjon i denne maskina er vist i figur 4(a). For å auke ytinga
+ønskjer ein å innføre samleband. Det vert laga ein versjon med eit samleband med tre steg.
+Samlebandet er vist i figur 4(b).
+
+Timing
+
+register -> bus
+tdrive
+
+ALU
+tALU
+
+ALU -> register
+tdrive
+
+CLK
+(a) Datapath tidsbruk utan samleband.
+Stage 1
+register -> bus
+
+Stage 2
+ALU
+
+Stage 3
+ALU -> register
+
+(b) Samleband med tre steg.
+
+Figur 4:
+Bruk figur 4(a) og 4(b) til å forklare korleis innføring av samlebandet påverkar klokkefrekvens og ILP (Instruction Level Parallelism).
+
+Side 4 av 11
+
+O PPGÅVE 4: D IVERSE (15%)
+Finn rett svaralternativ for oppgåvene. Korrekte svar gir 3% utteljing, feil svar gir -0.5% og veit
+ikkje (ikkje svar/fleire svar) gir inga utteljing.
+a. Er det mogleg å kopiere innehaldet i MAR til PC? Sjå figur 6.
+1) Ja.
+2) Nei.
+b. Kva påstand er ikkje korrekt for ein ein-brikke multiprosessor (CMP) .
+1) Kan ha felles hovudminne.
+2) Kan dele cache.
+3) Er av type homogen eller heterogen.
+4) Kan berre nytte ILP som parallelliserings strategi.
+c. Figur 5(a) har ein funksjon som gitt i sanningstabellen i figur 5(b).
+Ai Bi
+
+Ci-1
+
+Si
+
+Ci
+
+(a) Mystisk dings.
+
+Ai
+0
+0
+0
+0
+1
+1
+1
+1
+
+Bi
+0
+0
+1
+1
+0
+0
+1
+1
+
+Ci-1
+0
+1
+0
+1
+0
+1
+0
+1
+
+Si
+0
+1
+1
+0
+1
+0
+0
+1
+
+Ci
+0
+0
+0
+1
+0
+1
+1
+1
+
+(b) Sanningstabell for mystisk dings
+
+Figur 5:
+
+1) Korrekt.
+2) Ikkje korrekt.
+
+Side 5 av 11
+
+d. Ved å auke mengda samlebandstrinn aukar ILP.
+1) Korrekt.
+2) Ikkje korrekt.
+e. Under følgjer ein rekke påstandar om datamaskinkomponentar. Kva påstand er korrekt?
+1) Multipleksa adresse/data buss halverar adresserommet samanlikna med system med
+dedikerte adresse- og databusar.
+2) Ein prosessor som har ein ALU som kan utføre NAND-operasjon, kan programmerast
+til å utføre alle logiske operasjonar.
+3) PROM og flash-minne kan slettast og programmerast fleire gonger.
+4) Ein dekodarkrets har fleire inngangar enn utgangar.
+
+Side 6 av 11
+
+IJVM vedlegg
+
+Side 7 av 11
+
+Figur 6: Blokkdiagram (IJVM).
+
+Side 8 av 11
+
+Figur 7: Mikroinstruksjonsformat (IJVM).
+
+Side 9 av 11
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 8: Funksjonstabell for ALU (IJVM).
+
+Side 10 av 11
+
+Figur 9: Timingdiagram (IJVM).
+
+Side 11 av 11
+
+

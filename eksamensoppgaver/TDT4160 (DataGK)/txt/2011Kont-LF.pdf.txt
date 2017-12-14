@@ -1,0 +1,489 @@
+Norwegian University of Science and Technology
+Faculty of Information Technology, Mathematics and Electrical Engineering
+The Department of Computer and Information Science
+
+TDT4160
+
+D ATAMASKINER GRUNNKURS
+E KSAMEN
+15. AUGUST, 2011, 09:00–13:00
+
+Kontakt under eksamen:
+Gunnar Tufte 97402478
+Tillate hjelpemidler:
+D.
+Ingen trykte eller håndskrevne hjelpemidler tillatt.
+Bestemt, enkel kalkulator tillatt.
+Målform:
+Bokmål
+
+Page 1 of 17
+
+O PPGAVE 1: D IGITALT LOGISK NIVÅ (25%)
+I Figur 1 er EPROM, RAM og en bryter (SW 1) koblet til en felles buss. Programmet (ZX81) starter
+når SW 1 aktiveres. EPROM og RAM har aktivt lavt (logisk ”0”) CS (Chip Select)-signal.
+A0
+
+Address bus
+
+CS
+R/W
+D[7:0]
+
+CS
+R/W
+D[7:0]
+
+EPROM
+
+RAM
+
++5V
+SW 1
+Start
+ENB
+
+Microcontroller
+
+A15
+
+R/W
+Data[7:0]
+
+D[0]
+
+Data bus
+
+8
+
+D[7:0]
+
+Figur 1: Adressedekoding.
+a. Hvilken enhet addreseres viss følgende adresser legges ut på adressebussen?
+i) hex(2AAA)
+ii) hex(4F00)
+iii) hex(9000)
+b. Ut fra innformasjonen i figur 1, benytter systemet avbrudd (interrupt) eller polling for å starte programmet (ZX81)? Begrunn svaret.
+c. Angi alle adresseområder som ikke er i bruk.
+
+Page 2 of 17
+
+O PPGAVE 2: M IKROARKITEKTUR OG MIKROINSTRUKSJONER (25%)
+Bruk vedlagte diagram i figur 4, figur 5, figur 6, figur 7, figur 8 og figur 9 for IJVM til å løse oppgavene.
+a. Forklar funksjonen til boksen ”MPC” i figur 4.
+b. Lag mikroinstruksjon(er) for følgende IJVM-operasjon: last register ”TOS” med innholdet i register
+”H” + 1.
+Se vekk fra Addr- og J-felta i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem og B gitt
+i Figur 5.
+c. Følgende innhold i registrene er gitt:
+”SP” innholder: hex(0001),
+”LV” inneholder: hex(FF05),
+”CPP” innholder: hex(0003),
+”TOS” inneholder: hex(0004),
+”OPC” inneholder: hex(0005),
+”H” inneholder: hex(FF0A).
+Hva innholder TOS etter at de to oppgitte mikroinstruksjoner er utført? Se vekk fra bit i mikroinstruksjonsformatet som ikke er oppgitt. Gi svaret i hex format.
+1: ALU: 010100, C: 100000000, Mem: 000 og B: 1000
+2: ALU: 111101, C: 001000000, Mem: 000 og B: 0101
+d. Er det mulig å utvide antall ALU-funksjoner med eksisterende MIR? Begrunn svaret.
+
+Page 3 of 17
+
+O PPGAVE 3: I NSTRUKSJONSSETT A RKITEKTUR (ISA)(25%)
+For en tenkt maskin er noen av de mulige instruksjonsformatene vist i Figur 2.
+a:
+opCode
+8 bit
+
+b:
+opCode
+
+address
+
+8 bit
+
+16 bit
+
+c:
+opCode
+
+address x
+
+address y
+
+address z
+
+8 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+Figur 2: Mulige instruksjonsformat.
+Instruksjonsformatene for en annen tenkt maskin er vist i Figur 3.
+Load:
+opCode
+
+Ra
+
+Rn
+
+DC
+
+15
+
+0
+
+Store:
+opCode
+
+Ra
+
+Rn
+
+DC
+
+15
+
+0
+
+Move/ ALU:
+opCode
+
+Ra
+
+Rb
+
+Rc
+
+4 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+15
+
+0
+
+Ra: register
+Rb: register
+Rc: register, any user register
+
+Figur 3: Mulige instruksjonsformat.
+a. Hvordan relaterer de to maskinene i Figur 2 og 3 til RISC og CISC?
+b. Er det noen av maskinene som benytter instruksjonsformat av type:
+i) null adresse (zero-address) instruksjoner.
+ii) register-register operasjoner.
+Begrunn svaret.
+c. Er det en av de to maskinene i Figur 2 eller 3 som er mer generell enn den andre (tips: general
+computation)? Begrunn svaret.
+d. Hva er er ”offset” i samenheng med ”indexed addressing”?
+
+Page 4 of 17
+
+O PPGAVE 4: D ATAMASKINER (25%)
+a. Figur 8 og Figur 9 i vedleggene viser forskjellige versjoner av IJVM-mikroarkitekturer. Er ”Instruction Set Architecture” (ISA) påvirket av hvilken versjon av IJVM-mikroarkitektur som velges? Begrunn svaret.
+b. Hvordan påvirkes maksimal klokkefrekvens av å endre IJVM-mikroarkitektur fra Figur 8 til Figur 9?
+c. Hva er ”ILP” og hvordan påvirker et bytte fra Figur 8 ti Figur 9 ”ILP”.
+d. Hvilken innvirkning har en reduksjon i ∆w (Figur 7) på maksimal klokkefrekvens for maskinene i
+Figur 8 og Figur 9?
+
+Page 5 of 17
+
+IJVM vedlegg
+
+Page 6 of 17
+
+Figur 4: Blokkdiagram (IJVM).
+
+Page 7 of 17
+
+Figur 5: Mikroinstruksjonsformat (IJVM).
+
+Page 8 of 17
+
+A NSWER K EY
+
+FOR
+
+T HE E XAM
+
+Page 1 of 17
+
+O PPGAVE 1: D IGITALT LOGISK NIVÅ (25%)
+I Figur 1 er EPROM, RAM og en bryter (SW 1) koblet til en felles buss. Programmet (ZX81) starter når
+SW 1 aktiveres. EPROM og RAM har aktivt lavt (logisk ”0”) CS (Chip Select)-signal.
+a. Hvilken enhet addreseres viss følgende adresser legges ut på adressebussen?
+i) hex(2AAA)
+ii) hex(4F00)
+iii) hex(9000)
+Answer: EPROM: hex(0000) - hex(3FFF)
+RAM : hex(8000) - hex(BFFF)
+SW 1: hex(FFFF)
+JA
+b. Ut fra innformasjonen i figur 1, benytter systemet avbrudd (interrupt) eller polling for å starte programmet (ZX81)? Begrunn svaret.
+Answer: Polling, SW1 er kunn koplet til en datalinje på databussen. Systeme må overvåke (lese) adr
+hex(FFFF) for å få innformasjon om SW1 sin tilstand.
+c. Angi alle adresseområder som ikke er i bruk.
+Answer: hex(4000) - hex(7FFF)
+hex(A000) - hex(FFFE)
+
+Page 2 of 17
+
+O PPGAVE 2: M IKROARKITEKTUR OG MIKROINSTRUKSJONER (25%)
+Bruk vedlagte diagram i figur 4, figur 5, figur 6, figur 7, figur 8 og figur 9 for IJVM til å løse oppgavene.
+a. Forklar funksjonen til boksen ”MPC” i figur 4.
+Answer: Mikro Program Counter: Peikar på adresse til mikroinstruksjon i instruksjon. Innhald gitt
+av instruksjon og flagg, flagg brukast viss det er betinga hopp i mikroinstruksjonane til instruksjonen. Ved start av ny instruksjon peikar MPC på fyrste mikroinstruksjon i instruksjonsn.
+b. Lag mikroinstruksjon(er) for følgende IJVM-operasjon: last register ”TOS” med innholdet i register
+”H” + 1.
+Se vekk fra Addr- og J-felta i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem og B gitt
+i Figur 5.
+Answer: ALU: 111001 (A) C: 001000000 (TOS) Mem: 000 (ingen mem opprasjon) B: 1111 (15 alt
+går sidan ALU er satt til kunn A inngang)
+c. Følgende innhold i registrene er gitt:
+”SP” innholder: hex(0001),
+”LV” inneholder: hex(FF05),
+”CPP” innholder: hex(0003),
+”TOS” inneholder: hex(0004),
+”OPC” inneholder: hex(0005),
+”H” inneholder: hex(FF0A).
+Hva innholder TOS etter at de to oppgitte mikroinstruksjoner er utført? Se vekk fra bit i mikroinstruksjonsformatet som ikke er oppgitt. Gi svaret i hex format.
+1: ALU: 010100, C: 100000000, Mem: 000 og B: 1000
+2: ALU: 111101, C: 001000000, Mem: 000 og B: 0101
+Answer: 1:
+ALU: 010100 (B) C: 100000000 (H) Mem: 000 (ingen mem opprasjon) B: 1000 (8 OPC)
+2
+ALU: 111101 (A+B +1) C: 001000000 (TOS) Mem: 000 (ingen mem opprasjon) B: 0101 (5 LV)
+(TOS = FF0B)
+d. Er det mulig å utvide antall ALU-funksjoner med eksisterende MIR? Begrunn svaret.
+Answer: Ja, 26 muligemed6kontrollinjer.
+
+Page 3 of 17
+
+O PPGAVE 3: I NSTRUKSJONSSETT A RKITEKTUR (ISA)(25%)
+For en tenkt maskin er noen av de mulige instruksjonsformatene vist i Figur 2.
+Instruksjonsformatene for en annen tenkt maskin er vist i Figur 3.
+a. Hvordan relaterer de to maskinene i Figur 2 og 3 til RISC og CISC?
+Answer: Figur 2 CISC: mange adr. modus/inst typar. Variable operandar
+Figur 3 RISC: liklengde instruksjonar med uniform oppbygjing. Register-register operasjonar.
+b. Er det noen av maskinene som benytter instruksjonsformat av type:
+i) null adresse (zero-address) instruksjoner.
+ii) register-register operasjoner.
+Begrunn svaret.
+Answer: i) Figur 2 a, er ein null adresse instruksjon. ii) Figur 3 er alle instruksjonstypane angitt
+register-register.
+c. Er det en av de to maskinene i Figur 2 eller 3 som er mer generell enn den andre (tips: general
+computation)? Begrunn svaret.
+Answer: Nei, begge er generelle datamaskiner, dei kan gjere akkurat det samme (bergne alle beregnbare funksjonar). Men forskjellen kan føre til at ein av instruksjonssetta (og underliggande
+arkitektur) er meir effektiv til enkelte oppgåver. Vidare kan det gi seg utslag i at ein ISA er lettare
+å lage programm til.
+d. Hva er er ”offset” i samenheng med ”indexed addressing”?
+Answer: register innholder offset til gitt adresse (adr. gitt annastad).
+
+Page 4 of 17
+
+O PPGAVE 4: D ATAMASKINER (25%)
+a. Figur 8 og Figur 9 i vedleggene viser forskjellige versjoner av IJVM-mikroarkitekturer. Er ”Instruction Set Architecture” (ISA) påvirket av hvilken versjon av IJVM-mikroarkitektur som velges? Begrunn svaret.
+Answer: Nei, begge er ein mikroarkitektue implementert for IJVM-ISA.
+b. Hvordan påvirkes maksimal klokkefrekvens av å endre IJVM-mikroarkitektur fra Figur 8 til Figur 9?
+Answer: kortere klokkeperiode, no er det eit pipelina system der klokkeperioden er gitt av tregaste
+enhet i piplina, e.g. ALU (Samnt fleire inst. er under utføres samtidig).
+c. Hva er ”ILP” og hvordan påvirker et bytte fra Figur 8 ti Figur 9 ”ILP”.
+Answer: Instruction Level Paralellism: Paralelitet på ein kjerne. Fleire instruksjonar er under utførelse samtidigt. Utnyttar at instruksjonar brukar forskjellige einingar i forskjelige fasar av
+utførelse, f.eks. kan ha fetch, decode og execute. Ja, ved samlebånd aukar ILP.
+d. Hvilken innvirkning har en reduksjon i ∆w (Figur 7) på maksimal klokkefrekvens for maskinene i
+Figur 8 og Figur 9?
+Answer: Ingen, det er δy som angir klokka.
+
+Page 5 of 17
+
+IJVM vedlegg
+
+Page 6 of 17
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 6: Funksjonstabell for ALU (IJVM).
+
+Page 7 of 17
+
+Figur 7: Timingdiagram (IJVM).
+
+Page 8 of 17
+
+Figur 8: Alternativ mikroarkitektur I.
+
+Page 9 of 17
+
+Figur 9: Alternativ mikroarkitektur II.
+
+Page 10 of 17
+
+A0
+
+Address bus
+
+CS
+R/W
+D[7:0]
+
+CS
+R/W
+D[7:0]
+
+EPROM
+
+RAM
+
++5V
+SW 1
+Start
+ENB
+
+Microcontroller
+
+A15
+
+R/W
+Data[7:0]
+
+D[0]
+
+Data bus
+
+D[7:0]
+
+8
+
+Figur 10: Adressedekoding.
+
+a:
+opCode
+8 bit
+
+b:
+opCode
+
+address
+
+8 bit
+
+16 bit
+
+c:
+opCode
+
+address x
+
+address y
+
+address z
+
+8 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+Figur 11: Mulige instruksjonsformat.
+
+Load:
+opCode
+
+Ra
+
+Rn
+
+DC
+
+15
+
+0
+
+Store:
+opCode
+
+Ra
+
+Rn
+
+DC
+
+15
+
+0
+
+Move/ ALU:
+opCode
+
+Ra
+
+Rb
+
+Rc
+
+4 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+15
+
+0
+
+Ra: register
+Rb: register
+Rc: register, any user register
+
+Figur 12: Mulige instruksjonsformat.
+
+Page 11 of 17
+
+Figur 13: Blokkdiagram (IJVM).
+
+Page 12 of 17
+
+Figur 14: Mikroinstruksjonsformat (IJVM).
+
+Page 13 of 17
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 15: Funksjonstabell for ALU (IJVM).
+
+Page 14 of 17
+
+Figur 16: Timingdiagram (IJVM).
+
+Page 15 of 17
+
+Figur 17: Alternativ mikroarkitektur I.
+
+Page 16 of 17
+
+Figur 18: Alternativ mikroarkitektur II.
+
+Page 17 of 17
+
+

@@ -1,0 +1,274 @@
+Norwegian University of Science and Technology
+Faculty of Information Technology, Mathematics and Electrical Engineering
+The Department of Computer and Information Science
+
+TDT4160
+
+D ATAMASKINER GRUNNKURS
+E KSAMEN
+10. DESEMBER , 2008, 09:00–13:00
+
+Kontakt under eksamen:
+Gunnar Tufte 73590356
+Tillatne hjelpemidel:
+D.
+Ingen trykte eller håndskrevne hjelpemidler tillatt.
+Bestemt, enkel kalkulator tillatt.
+Målform:
+Bokmål
+
+Page 1 of 14
+
+O PPGAVE 1: D IGITALT LOGISK NIVÅ (20% (10% PÅ A ,
+5% PÅ B OG C ))
+a. I Figur 1 er EPROM, RAM og en lysdiode (LED) koblet til en felles
+buss. Finn adresseområdet for enhetene. EPROM og RAM har aktivt
+lavt (logisk ”0”) CS-signal (Chip Select).
+A0
+
+Adressebuss
+
+Mikrokontroller
+
+A15
+
+R/W
+Data[7:0]
+
+CS
+R/W
+D[7:0]
+
+CS
+R/W
+D[7:0]
+
+CS
+R/W
+D[7:0]
+
+EPROM
+
+RAM
+
+RAM
+
+Databuss
+
+8
+
+LED
+D[7:0]
+
+Figur 1: Adressedekoding.
+b. Er det mulig å utvide systemet med 16kB (16384 bytes) RAM? Begrunn svaret.
+c. Når lyser lysdioden (LED)?
+
+Page 2 of 14
+
+O PPGAVE 2: M IKROARKITEKTUR OG MIKROINSTRUKSJO NER (20% (5% PÅ A OG B ; 10% PÅ C ))
+Bruk vedlagte diagram i figur 5, figur 6, figur 7 og figur 8 for IJVM til å løse
+oppgavene.
+a. Forklar funksjonen til registeret ”MPC”.
+b. Lag mikroinstruksjon(er) for følgende IJVM-operasjon: last register
+”OPC” med innholdet i register ”H”.
+Se vekk fra Addr- og J-felta i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem og B gitt i Figur 6.
+c. Lag mikroinstruksjon(er) for følgende IJVM-operasjon:
+TOS = LV + (OPC + 1).
+Se vekk fra Addr- og J-feltene i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem og B gitt i Figur 6.
+
+Page 3 of 14
+
+O PPGAVE 3: I NSTRUKSJONSSETT A RKITEKTUR (ISA)(20%)
+I en tenkt 16-bit arkitektur har en bare tre typer instruksjoner, last (load),
+lagre (store) og flytt/ALU (Move/ALU). Figur 2 viser de tre instruksjonstypene.
+Load:
+opCode
+
+Ra
+
+Rn
+
+DC
+
+15
+
+0
+
+Store:
+opCode
+
+Ra
+
+Rn
+
+DC
+
+15
+
+0
+
+Move/ ALU:
+opCode
+
+Ra
+
+Rb
+
+Rc
+
+4 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+15
+
+0
+
+Load:
+Ra: points to memory location, any user register
+Rn: data destination register, any user register
+DC: Don’t Care, not in use
+Store:
+Ra: points to memory location, any user register
+Rn: data source register, any user register
+DC: Don’t Care, not in use
+Move/ ALU::
+Ra: destination register, any user register
+Rb: source register, any user register
+Rc: source register, any user register
+
+Figur 2: Mulige instruksjonstyper.
+a. Ut fra tilgjengelig informasjon:
+i) Hva er det maksimale antall instruksjoner denne maskinen kan
+ha? Begrunn svaret.
+ii) Hva er det maksimale antall brukerregistere (user registers) denne maskinen kan ha? Begrunn svaret.
+b. Hvilken type arkitektur er dette instruksjonsformatet for?
+c. Hvis man endrer formatet for load/store til å bruke instruksjonsfeltet
+merket DC til å inneholde en indeks og bruker Ra som baseadresse, har man endret adresseringsmodi. Har dette noen innvirkning på
+ISA-definisjonen for denne tenkte maskinen? Begrunn svaret.
+d. Denne maskinen er mest sannsynlig en RISC-maskin. Hvorfor?
+
+Page 4 of 14
+
+O PPGAVE 4: D ATAMASKINER (20% (8% PÅ A OG C ; 4%
+PÅ B ))
+a. Figur 9 og figur 10 i vedlegget viser forskjellige versjoner av IJVMmikroarkitekturer. Hvilke grep er gjort og hvordan bidrar de til å øke
+ytelsen sammenliknet med den opprinnelige mikroarkitekturen i figur 5?
+b. Hvilken innvirkning har endringene i mikroarkitekturen gitt i spørsmål ”a” på ISA-nivå?
+c. Bruk figur 5, figur 8 og figur 10: Ca. hvor mye kan klokkeperioden
+reduseres ved å endre mikroarkitekturen fra figur 5 til figur 10?
+
+O PPGAVE 5: D IVERSE (20%)
+Finn riktig svaralternativ for oppgavene. Korrekte svar gir 4% uttelling, feil
+svar gir -2% og vet ikke (ikke svar/flere svar) gir ingen utteling.
+a. Hva ligg i Addr-feltet i MIR? Se figur 5
+1) Adressen til neste mikroinstruksjon i control store.
+2) Inneholder kun gyldig adresse hvis det skal gjøres et betinget
+hopp, aktivt J-bit.
+3) Til en hver tid en kopi av innholdet i MBR.
+4) control store start- og sluttadresse, for aktiv mikroinstruksjon.
+b. Hvilken påstand er korrekt for en en-brikke mulitiprosessorer (CMP)
+.
+1) Er en ”Array computer”.
+2) Er type SIMD.
+3) Er av type homogen eller heterogen.
+4) Er av type MIMD og benytter alltid en ”crossbar” for kommunikasjon mellom prosessorkjernene.
+
+Page 5 of 14
+
+c. Hva er skissert i figur 3?
+Ai Bi
+
+Ci-1
+
+Si
+
+Ci
+
+Figur 3: Mystisk dings.
+1) Full-adder.
+2) Halv-adder.
+3) Statisk RAM-celle.
+4) Multiplekser.
+d. Hvordan er enhetene i figur 4 prioritert? Nivå 1 (level 1) er prioritert
+over nivå 2 (level 2). Rekkefølgen er gitt fra høyeste til laveste.
+Bus Request level 1
+
+Arbiter
+
+Arbiter
+
+Bus Request level 2
+GRANT level 2
+GRANT level 1
+
+1
+
+2
+
+3
+
+4
+
+1
+
+2
+
+3
+
+4
+
+Figur 4: Sentralisert bussarbitrering.
+1) 1, 2, 3, 4
+2) 2, 3, 1, 4.
+3) 1, 4, 2, 3.
+4) 3, 2, 4, 1.
+
+Page 6 of 14
+
+e. Under følger en rekke påstander om datamaskinkomponenter. Hvilken påstand er korrekt?
+1) Asynkron bussoverføring må bruke en global klokke.
+2) En ALU som kan utføre addisjon og invertere kan utføre subtraksjon.
+3) EPROM og flash-minne har ekvivalent funksjonalitet.
+4) EEPROM og flash-minne har ekvivalent funksjonalitet.
+
+Page 7 of 14
+
+IJVM vedlegg
+
+Page 8 of 14
+
+Figur 5: Blokkdiagram (IJVM).
+Page 9 of 14
+
+Figur 6: Mikroinstruksjonsformat (IJVM).
+
+Page 10 of 14
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 7: Funksjonstabell for ALU (IJVM).
+
+Page 11 of 14
+
+Figur 8: Timing-diagram (IJVM).
+
+Page 12 of 14
+
+Figur 9: Alternativ mikroarkitektur I.
+Page 13 of 14
+
+Figur 10: Alternativ mikroarkitektur II.
+Page 14 of 14
+
+

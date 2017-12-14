@@ -1,0 +1,220 @@
+Norges teknisk–naturvitenskapelige universitet
+Institutt for datateknikk og informasjonsvitenskap
+
+Side 1 av 12
+
+Faglig kontakt under eksamen:
+Magnus Jahre
+(952 22 309)
+
+EKSAMEN I TDT4160 DATAMASKINER GRUNNKURS
+Onsdag 11. august
+Tid: 09:00 – 13:00
+Hjelpemidler:
+D.
+Ingen trykte eller håndskrevne hjelpemidler tillatt.
+Bestemt, enkel kalkulator tillatt.
+Vi anbefaler å svare kort og presist for å få tid til å svare på alle oppgavene. Eksamen teller 100% av
+karakteren i faget, og de oppgitte prosenttallene angir det maksimale antall poeng man kan oppnå
+på hver oppgave. Les oppgavene grundig.
+
+Oppgave 1
+
+Digital logikk (20%)
+
+Figur 1 på side 2 viser et blokkdiagram av et system der en EPROM enhet og to RAM enheter er
+koblet til en felles adresse- og databuss. EPROM og RAM enhetene har et aktivt lavt (logisk “0”) CS
+(Chip Select) signal.
+a) (10%) Tegn et minnekart for systemet i figur 1.
+Løsning: Figur 2 viser minneområdet for systemet.
+b) (5%) Hvor mye RAM kan systemet utvides med hvis alle eksisterende enheter beholdes? Begrunn svaret.
+Løsning: Systemet kan utvides med 214 = 16384 bytes (eller 16KB)
+
+Side 2 av 12
+
+A0
+
+Adressebuss
+
+A15
+
+CS
+
+CS
+
+R/W
+
+CS
+
+R/W
+Data [7:0]
+
+EPROM
+
+R/W
+Data [7:0]
+
+RAM 1
+
+Data [7:0]
+RAM 2
+
+R/W
+Data [7:0]
+
+Figur 1: Adressedekoding
+c) (5%) Tegn et blokkdiagram som inkluderer den nye RAM-enheten og nødvendig adresseringslogikk.
+Løsning: Figur 3 viser den nye RAM-enheten og nødvendig adresselogikk. De nye elementene i
+figuren er vist i grått.
+Oppgave 2
+
+Mikroarkitektur og mikroinstruksjoner (20%)
+
+a) (10%) Forklar funksjonen til SP registeret. Hvilke operasjoner brukes SP i?
+Løsning: SP peker alltid til toppen av “operand stack”. SP brukes i hovedsak når man kaller en
+metode og når man returnerer fra den. Se side 250–255 i læreboka for flere detaljer.
+b) (5%) Lag mikroinstruksjon(er) for følgende IJVM-operasjon: SP = SP + 1
+
+Side 3 av 12
+
+0x0000
+
+EPROM
+0x4000
+
+RAM 1
+0x8000
+
+Ikke i bruk
+0xB000
+
+RAM 2
+0xFFFF
+
+Figur 2: Minnekart for Oppgave 1a
+Angi korrekte bit for ALU, C, Mem og B for instruksjonsformatet gitt i figur 6. Du kan se bort
+fra Addr og J-feltene. Mikroinstruksjon(ene) skal være tilpasset Mic-1 (se figur 7).
+Løsning: ALU: 110101 (B+1), C: 000001000 (Skriv SP), Mem: 000 (ingen minneoperasjon), B:
+0100 (Desimalverdi: 4, Les SP)
+c) (5%) Lag mikroinstruksjon(er) for følgende IJVM-operasjon: TOS = TOS + OPC
+Angi korrekte bit for ALU, C, Mem og B for instruksjonsformatet gitt i Figur 6. Du kan se bort
+fra Addr og J-feltene. Mikroinstruksjon(ene) skal være tilpasset Mic-1 (se figur 7).
+Løsning: Siden TOS og OPC deler B bussen i Mic-1, må vi bruke H som mellomlager. Vi velger å
+flytte TOS til H først og så legge sammen. En annen riktig løsning er å flytte TOS til H og så legge
+sammen.
+Mikroinstruksjon 1 (H = OPC)
+ALU: 010100 (B), C: 100000000 (Skriv H), Mem: 000 (ingen minneoperasjon), B: 1000 (Desimalverdi: 8, les OPC)
+Mikroinstruksjon 2 (TOS = H + TOS)
+ALU: 111100 (A+B), C: 001000000 (Skriv TOS), Mem: 000 (ingen minneoperasjon), B: 0111 (Desimalverdi: 7, les TOS)
+
+Side 4 av 12
+
+A0
+
+Adressebuss
+
+A15
+
+CS
+
+CS
+
+R/W
+
+CS
+
+R/W
+Data [7:0]
+
+EPROM
+
+CS
+
+R/W
+Data [7:0]
+
+RAM 1
+
+R/W
+Data [7:0]
+
+RAM 2
+
+R/W
+Data [7:0]
+
+Figur 3: Blokkdiagram med ny RAM enhet (Oppgave 1c)
+
+Data [7:0]
+RAM 3
+
+Side 5 av 12
+Oppgave 3
+
+Instruksjonssett (20%)
+
+a) (10%) Du har fått i oppgave å lage et instruksjonsformat til en enkel 8-bitsarkitektur. Formatet
+skal støtte 4 forskjellige instruksjoner, 8 registre og 2 operander. Foreslå et mulig instruksjonsformat og forklar hvorfor det oppfyller kravene gitt i denne oppgaven.
+Løsning: Vi setter av 2 bit til opcode to registerfelt av 3 bit. De to opcodebitene gir 22 = 4 mulige
+opcoder mens registerfeltene kan adressere 23 = 8 registre.
+b) (10%) Forklar forskjellen på register adressering (Engelsk: register addressing) og registerindirekte adressering (Engelsk: register indirect addressing).
+Løsning: Med register adressering peker tallet man oppgir i instruksjonen til et register. I registerindirekte adressering peker verdien i instruksjonen også til et register, men her inneholder registeret
+en minneadresse som man så bruker til å hente de ønskede dataene.
+Oppgave 4
+
+Datamaskiner (20%)
+
+a) (10%) Figur 9 viser Mic-3 som er forbedring av mikroarkitekturen Mic-1 vist i figur 7. Nevn
+de to viktigste forbedringene og forklar på hvilken måte de bidrar til økt ytelse.
+Løsning: Forbedring 1: Mikroarkitekturen har tre busser og dette gjør at man slipper å bruke instruksjoner på å mellomlagre verdier hvis man skal legge sammen verdier fra to registere.
+Forbedring 2: Det er lagt til latcher på alle bussene. Dette åpner for pipelining som gjør at prosessoren kan jobbe med flere instruksjoner samtidig.
+b) (10%) Diskuter kort fordeler og ulemper med å implementere ut-av-rekkefølge instruksjonsutføring (Engelsk: out-of-order execution) i en prosessor.
+Løsning: Se læreboka s. 304 – 309. Dette er en typisk “tenke selv” oppgave der man får poeng for
+alle fornuftige forslag.
+Oppgave 5
+
+Diverse (20%)
+
+a) (10%) Forklar forskjellen(e) mellom 1., 2. og 3. generasjons Chip Multiprocessor (CMP). Tegn
+gjerne en figur.
+
+Side 6 av 12
+
+Figur 4: Chip Multiprocessor generasjoner (Hentet fra Olukotun og Hammond, 2005)
+Løsning: Figur 4 viser en konvensjonell prosessor og tre generasjoner med CMPer. En første generasjons CMP er to enkjernearkitekturer plassert på samme brikke. Andregenerasjon har prosessorkjerner designet for bruk i en CMP og deler hurtigbuffer på brikken. Tredjegenerasjon har utvidet
+kjernene med multi-threading.
+b) (5%) Forklar forskjellen på en write-through og en write-back strategi for hurtigbuffere (Engelsk: caches).
+Løsning: Med en write-through strategi blir alle hovedminnet oppdatert på alle skriveoperasjoner til
+hurtigbufferet. Med write-back skriver man tilbake dataene når hurtigbufferblokken blir kastet ut av
+hurtigbufferet. (Se læreboka s. 298)
+c) (5%) Forklar forskjellen på statisk og dynamisk hopp-prediksjon (Engelsk: branch prediction).
+
+Side 7 av 12
+Løsning: Dynamisk hopp-prediksjon gjøres mens programmet kjører, krever ekstra maskinvare og
+er usynlig for programmet. Statisk hopp-prediksjon gjøres av kompilatoren ved å sette inn spesielle
+instruksjoner som forteller prosessoren om kompilatoren tror programmet vil hoppe eller ikke. (Se
+læreboka s. 301-304)
+
+Side 8 av 12
+
+Vedlegg
+
+Side 9 av 12
+
+Figur 5: Funksjonstabell for ALU (Mic-1)
+
+Figur 6: Mikroinstruksjonsformat (Mic-1)
+
+Side 10 av 12
+
+Figur 7: IJVM mikroarkitektur (Mic-1)
+
+Side 11 av 12
+
+Figur 8: Blokkdiagram (Mic-1)
+
+Side 12 av 12
+
+Figur 9: Alternativ IJVM mikroarkitektur (Mic-3)
+
+

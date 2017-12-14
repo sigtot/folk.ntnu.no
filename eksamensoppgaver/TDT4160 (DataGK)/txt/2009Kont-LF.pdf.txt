@@ -1,0 +1,510 @@
+Norwegian University of Science and Technology
+Faculty of Information Technology, Mathematics and Electrical Engineering
+The Department of Computer and Information Science
+
+TDT4160
+
+D ATAMASKINER GRUNNKURS
+E KSAMEN
+8. AUGUST, 2009, 09:00–13:00
+
+Kontakt under eksamen:
+Marius Grannæs 97005663
+Tillate hjelpemidler:
+D.
+Ingen trykte eller håndskrevne hjelpemidler tillatt.
+Bestemt, enkel kalkulator tillatt.
+Målform:
+Bokmål
+
+Page 1 of 20
+
+O PPGAVE 1: D IGITALT LOGISK NIVÅ (20%)
+I Figur 1 er EPROM, RAM og en bryter (SW 1) koblet til en felles buss. Systemet er programmert
+til å starte når SW 1 aktiveres. EPROM og RAM har aktivt lavt (logisk ”0”) CS (Chip Select)-signal.
+A0
+
+Address bus
+
+CS
+R/W
+D[7:0]
+
+CS
+R/W
+D[7:0]
+
+EPROM
+
+RAM
+
++5V
+SW 1
+Start
+ENB
+
+Microcontroller
+
+A15
+
+R/W
+Data[7:0]
+
+D[0]
+
+Data bus
+
+D[7:0]
+
+8
+
+Figur 1: Adressedekoding.
+a. Er adresseområdet for enhetene i systemet korrekt angitt i minnekartet vist i Figur 2? Eventuelt, hva er korrekt adresseområde for enhetene i systemet?
+FFFF
+
+SW 1
+
+FFFE
+
+Ledig
+C000
+BFFF
+
+RAM
+8000
+7FFF
+
+Ledig
+4000
+3FFF
+
+EPROM
+0000
+
+Figur 2: Minnekart for systemet vist i Figur 1.
+b. Hvor mye RAM kan systemet utvides til (alle eksisterende enheter beholdes)? Begrunn svaret.
+Page 2 of 20
+
+O PPGAVE 2: M IKROARKITEKTUR OG MIKROINSTRUKSJONER (20% (5% PÅ
+A OG B ; 10% PÅ C ))
+Bruk vedlagte diagram i figur 6, figur 7, figur 8 og figur 9 for IJVM til å løse oppgavene.
+a. Forklar funksjonen til boksen ”4-to-16 Decoder”.
+b. Lag mikroinstruksjon(er) for følgende IJVM-operasjon: last register ”OPC” med innholdet i
+register ”H” + 1.
+Se vekk fra Addr- og J-felta i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem
+og B gitt i Figur 7.
+c. Følgende innhold i registrene er gitt:
+”SP” innholder: hex(0FF1),
+”LV” inneholder: hex(0FF2),
+”CPP” innholder: hex(0FF3),
+”TOS” inneholder: hex(0FF4),
+”OPC” inneholder: hex(0FF5),
+”H” inneholder: hex(0FF6).
+Hva innholder TOS etter at de to oppgitte mikroinstruksjoner er utført? Se vekk fra bit i
+mikroinstruksjonsformatet som ikke er oppgitt. Gi svaret i hex format.
+1: ALU: 010100, C: 100000000, Mem: 000 og B: 1000
+2: ALU: 111101, C: 001000000, Mem: 000 og B: 0101
+
+Page 3 of 20
+
+O PPGAVE 3: I NSTRUKSJONSSETT A RKITEKTUR (ISA)(20%)
+For en tenkt maskin er noen av de mulige instruksjonsformatene vist i Figur 3.
+a:
+opCode
+8 bit
+
+b:
+opCode
+
+address
+
+8 bit
+
+16 bit
+
+c:
+opCode
+
+address x
+
+address y
+
+address z
+
+8 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+Figur 3: Mulige instruksjonsformat.
+a. Hvilket adresseformat er gitt i de tre instruksjonene i Figur 3?
+b. Er det mest sannsynlig at dette er instruksjonsformatet til en RISC-maskin eller CISC-maskin?
+Begrunn svaret.
+c. Hvilken av de tre instruksjonsformatene i Figur 3 er best egnet for register-register operasjoner? Begrunn svaret.
+d. Hva er ”indexed addressing”?
+
+Page 4 of 20
+
+O PPGAVE 4: D ATAMASKINER (20% (8% PÅ A OG B ; 4% PÅ C ))
+a. Figur 10 og Figur 11 i vedleggene viser forskjellige versjoner av IJVM-mikroarkitekturer.
+Hvilken påvirkning har forandringene på ”Instruction-Level-Parallelism” (ILP)?
+b. Hvilken endringer i Figur 9 er det sannsynlig å anta at en får hvis en bytter fra mikroarkitekturen gitt i Figur 11 til mikroarkitekturen gitt i Figur 10.
+c. Kan en øke ILP uten å endre ”Instruction Set Architecture” (ISA)? Begrunn svaret.
+
+O PPGAVE 5: D IVERSE (20%)
+Finn rett svaralternativ for oppgavene. Korrekte svar gir 4% uttelling, feil svar gir -2% og vet ikke
+(ikke svar, flere svar) gir ingen utteling.
+a. Hvor mange mikroinstruksjoner kan ”control store” inneholde, se figur 6
+1) 512.
+2) 36.
+3) 18432.
+4) 9.
+b. Hvilken påstand er ikke korrekt for Instruksjonssetarkitektur (ISA).
+1) Første nivå tilgjengelig for (ekspert-)brukere.
+2) Grense mellom maskinvare og programvare.
+3) Grense mellom mikroarkitekturnivå og digitaltlogisknivå.
+4) Opprinnelig det eneste nivået.
+
+Page 5 of 20
+
+c. Hva er skissert i Figur 4?
+
+Figur 4: Mystisk dings.
+1) Dynamisk RAM-celle.
+2) Halvadder.
+3) Statisk RAM-celle.
+4) Multiplekser.
+d. Hvilken påstand for mikrokontrollersystemet i Figur 5 er korrekt?
+
+Figur 5: Mikrokontrollersystem.
+1) Prosessoren adresserer 28 minnelokasjoner.
+2) Systemet har multiplekset adresse- og databuss.
+3) Det er et system uten databuss.
+4) Det er et system med kun seriebuss.
+Page 6 of 20
+
+e. Under følger en rekke påstander om datamaskinkomponenter. Hvilken påstand er korrekt?
+1) Superscalare prosessorer må være RISC-maskiner.
+2) Ved å innføre Superscalaritet øker ILP.
+3) PROM er en type dynamisk minne.
+4) EEPROM er en type dynamisk minne.
+
+Page 7 of 20
+
+IJVM vedlegg
+
+Page 8 of 20
+
+Figur 6: Blokkdiagram (IJVM).
+
+Page 9 of 20
+
+Figur 7: Mikroinstruksjonsformat (IJVM).
+
+Page 10 of 20
+
+A NSWER K EY
+
+FOR
+
+T HE E XAM
+
+Page 1 of 20
+
+O PPGAVE 1: D IGITALT LOGISK NIVÅ (20%)
+I Figur 1 er EPROM, RAM og en bryter (SW 1) koblet til en felles buss. Systemet er programmert
+til å starte når SW 1 aktiveres. EPROM og RAM har aktivt lavt (logisk ”0”) CS (Chip Select)-signal.
+a. Er adresseområdet for enhetene i systemet korrekt angitt i minnekartet vist i Figur 2? Eventuelt, hva er korrekt adresseområde for enhetene i systemet?
+Answer: EPROM: hex(0000) - hex(3FFF) RAM : hex(8000) - hex(BFFF) SW 1: hex(FFFF)
+JA
+b. Hvor mye RAM kan systemet utvides til (alle eksisterende enheter beholdes)? Begrunn svaret.
+Answer: Maks ved RAM i område hex(4000) - hex(7FFF) og hex(C000)- hex(FFFE).
+
+O PPGAVE 2: M IKROARKITEKTUR OG MIKROINSTRUKSJONER (20% (5% PÅ
+A OG B ; 10% PÅ C ))
+Bruk vedlagte diagram i figur 6, figur 7, figur 8 og figur 9 for IJVM til å løse oppgavene.
+a. Forklar funksjonen til boksen ”4-to-16 Decoder”.
+Answer: Decode 4 bit styresignal til 16 unike register enable for å legje register innhold ut
+på B-bussen (kunn eit register omgongen kan legjast ut på B-bussen
+b. Lag mikroinstruksjon(er) for følgende IJVM-operasjon: last register ”OPC” med innholdet i
+register ”H” + 1.
+Se vekk fra Addr- og J-felta i mikroinstruksjonsformatet. Angi korrekte bit for ALU, C, Mem
+og B gitt i Figur 7.
+Answer: ALU: 111001 (A) C: 010000000 (OPC) Mem: 000 (ingen mem opprasjon) B: 1111 (15
+non alt går sidan ALU er satt til kunn A inngang)
+c. Følgende innhold i registrene er gitt:
+”SP” innholder: hex(0FF1),
+”LV” inneholder: hex(0FF2),
+”CPP” innholder: hex(0FF3),
+”TOS” inneholder: hex(0FF4),
+”OPC” inneholder: hex(0FF5),
+”H” inneholder: hex(0FF6).
+Hva innholder TOS etter at de to oppgitte mikroinstruksjoner er utført? Se vekk fra bit i
+mikroinstruksjonsformatet som ikke er oppgitt. Gi svaret i hex format.
+1: ALU: 010100, C: 100000000, Mem: 000 og B: 1000
+2: ALU: 111101, C: 001000000, Mem: 000 og B: 0101
+Page 2 of 20
+
+Answer: 1: Laste LV eller OPC (eventuelt med + 1 option viss ikkje i neste micro opp) inn i
+H
+ALU: 010100 (B) C: 100000000 (H) Mem: 000 (ingen mem opprasjon) B: 1000 (8 OPC)
+2 addere H + LV + 1 skriv til TOS.
+ALU: 111101 (A+B +1) C: 001000000 (TOS) Mem: 000 (ingen mem opprasjon) B: 0101 (5
+LV)
+TOS = LV + (OPC + 1) (TOS = 1FE8
+
+Page 3 of 20
+
+O PPGAVE 3: I NSTRUKSJONSSETT A RKITEKTUR (ISA)(20%)
+For en tenkt maskin er noen av de mulige instruksjonsformatene vist i Figur 3.
+a. Hvilket adresseformat er gitt i de tre instruksjonene i Figur 3?
+Answer: a: zero-address
+b: one-sddress
+c: three-address
+b. Er det mest sannsynlig at dette er instruksjonsformatet til en RISC-maskin eller CISC-maskin?
+Begrunn svaret.
+Answer: CISC, forskjelig lengde, mange addreseringsmodi.
+c. Hvilken av de tre instruksjonsformatene i Figur 3 er best egnet for register-register operasjoner? Begrunn svaret.
+Answer: c. (tre regs kan gis).
+d. Hva er ”indexed addressing”?
+Answer: register innholder offset til gitt adresse (adr. gitt annastad).
+
+Page 4 of 20
+
+O PPGAVE 4: D ATAMASKINER (20% (8% PÅ A OG B ; 4% PÅ C ))
+a. Figur 10 og Figur 11 i vedleggene viser forskjellige versjoner av IJVM-mikroarkitekturer.
+Hvilken påvirkning har forandringene på ”Instruction-Level-Parallelism” (ILP)?
+Answer: • Pipeline, fleire instruksjoner utføres samtidig.
+IFU slepp bruke tid (microinst) på å hente instruksjonar i paralell
+b. Hvilken endringer i Figur 9 er det sannsynlig å anta at en får hvis en bytter fra mikroarkitekturen gitt i Figur 11 til mikroarkitekturen gitt i Figur 10.
+Answer: kortere klokkeperiode, no er det eit pipelina system der klokkeperioden er gitt av
+tregaste enhet i piplina, e.g. ALU. Samnt fleire inst. er under utføres samtidig.
+c. Kan en øke ILP uten å endre ”Instruction Set Architecture” (ISA)? Begrunn svaret.
+Answer: Ja, ved samlebånd aukar ILP.
+
+O PPGAVE 5: D IVERSE (20%)
+Finn rett svaralternativ for oppgavene. Korrekte svar gir 4% uttelling, feil svar gir -2% og vet
+ikke (ikke svar, flere svar) gir ingen utteling.
+(i) Hvor mange mikroinstruksjoner kan ”control store” inneholde, se figur 6
+1)
+2)
+3)
+4)
+
+512.
+36.
+18432.
+9.
+
+Answer: 1
+(ii) Hvilken påstand er ikke korrekt for Instruksjonssetarkitektur (ISA).
+1)
+2)
+3)
+4)
+
+Første nivå tilgjengelig for (ekspert-)brukere.
+Grense mellom maskinvare og programvare.
+Grense mellom mikroarkitekturnivå og digitaltlogisknivå.
+Opprinnelig det eneste nivået.
+
+Answer: 3
+
+Page 5 of 20
+
+(iii) Hva er skissert i Figur 4?
+1)
+2)
+3)
+4)
+
+Dynamisk RAM-celle.
+Halvadder.
+Statisk RAM-celle.
+Multiplekser.
+
+Answer: 3
+(iv) Hvilken påstand for mikrokontrollersystemet i Figur 5 er korrekt?
+1) Prosessoren adresserer 28 minnelokasjoner.
+2) Systemet har multiplekset adresse- og databuss.
+3) Det er et system uten databuss.
+4) Det er et system med kun seriebuss.
+Answer: 2
+
+Page 6 of 20
+
+(v) Under følger en rekke påstander om datamaskinkomponenter. Hvilken påstand er korrekt?
+1)
+2)
+3)
+4)
+
+Superscalare prosessorer må være RISC-maskiner.
+Ved å innføre Superscalaritet øker ILP.
+PROM er en type dynamisk minne.
+EEPROM er en type dynamisk minne.
+
+Answer: korrekt? 2
+
+Page 7 of 20
+
+IJVM vedlegg
+
+Page 8 of 20
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 8: Funksjonstabell for ALU (IJVM).
+
+Page 9 of 20
+
+Figur 9: Timingdiagram (IJVM).
+
+Page 10 of 20
+
+Figur 10: Alternativ mikroarkitektur I.
+
+Page 11 of 20
+
+Figur 11: Alternativ mikroarkitektur II.
+
+Page 12 of 20
+
+A0
+
+Address bus
+
+CS
+R/W
+D[7:0]
+
+CS
+R/W
+D[7:0]
+
+EPROM
+
+RAM
+
++5V
+SW 1
+Start
+ENB
+
+Microcontroller
+
+A15
+
+R/W
+Data[7:0]
+
+D[0]
+
+Data bus
+
+D[7:0]
+
+8
+
+Figur 12: Adressedekoding.
+FFFF
+
+SW 1
+
+FFFE
+
+Ledig
+C000
+BFFF
+
+RAM
+8000
+7FFF
+
+Ledig
+4000
+3FFF
+
+EPROM
+0000
+
+Figur 13: Minnekart for systemet vist i Figur 1.
+a:
+opCode
+8 bit
+
+b:
+opCode
+
+address
+
+8 bit
+
+16 bit
+
+c:
+opCode
+
+address x
+
+address y
+
+address z
+
+8 bit
+
+4 bit
+
+4 bit
+
+4 bit
+
+Figur 14: Mulige instruksjonsformat.
+Page 13 of 20
+
+Figur 15: Mystisk dings.
+
+Figur 16: Mikrokontrollersystem.
+
+Page 14 of 20
+
+Figur 17: Blokkdiagram (IJVM).
+
+Page 15 of 20
+
+Figur 18: Mikroinstruksjonsformat (IJVM).
+
+Page 16 of 20
+
+SLR1 SLL8 Function
+0
+0 No shift
+0
+1 Shift 8 bit left
+1
+0 Shift 1 bit right
+Figur 19: Funksjonstabell for ALU (IJVM).
+
+Page 17 of 20
+
+Figur 20: Timingdiagram (IJVM).
+
+Page 18 of 20
+
+Figur 21: Alternativ mikroarkitektur I.
+
+Page 19 of 20
+
+Figur 22: Alternativ mikroarkitektur II.
+
+Page 20 of 20
+
+

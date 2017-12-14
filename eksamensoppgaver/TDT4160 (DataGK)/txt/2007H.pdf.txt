@@ -1,0 +1,302 @@
+Side 1 av 11
+
+NTNU
+Norges teknisk-naturvitenskapelige
+universitet
+
+Fakultet for informasjonsteknologi,
+matematikk og elektroteknikk
+Institutt for datateknikk
+og informasjonsvitenskap
+
+BOKMÅL
+
+AVSLUTTENDE EKSAMEN I
+TDT4160
+Datamaskiner Grunnkurs
+Torsdag 29. November 2007
+Kl. 09.00 – 13.00
+
+Faglig kontakt under eksamen:
+Marius Grannæs, tlf. 97005663
+
+Hjelpemidler:
+Kalkulator tillatt. Ingen trykte eller håndskrevne hjelpemidler tillatt.
+
+Sensurdato:
+20. Desember 2007. Resultater gjøres kjent på http://studweb.ntnu.no/ og sensurtelefon
+81548014.
+
+Det er angitt i poeng hvor mye hver deloppgave teller ved sensur. Gjør nødvendige
+antagelser der dette er nødvendig. Husk: korte og konsise svar er ofte de beste.
+
+Lykke til!
+
+Side 2 av 11
+
+Oppgave 1 (30%) Multiple choice
+Rett svar gir 2 poeng, feil svar vil gi -0.5 poeng. Flere avkryssinger på en oppgave gir 0
+poeng. Bruk eget svarark på slutten av oppgavesettet.
+1) Hvilken av disse påstandene om RISC er ikke sann?
+a)
+b)
+c)
+d)
+
+RISC-maskiner har som regel flere registre enn CISC-maskiner.
+RISC har som regel fast instruksjonslengde.
+RISC har som regel flere adresseringsmodi enn CISC.
+RISC har egne LOAD/STORE instruksjoner.
+
+2) Hvilket av disse typene er ikke en form for avbildning i hurtigbuffer (eng: cache)?
+a)
+b)
+c)
+d)
+
+Sett-assosiativt avbildning
+Direkte avbildning
+Kummulativ avbilding
+Fullt assosiativ avbildning
+
+3) Hva er hensikten med hurtigbuffer (eng: cache)?
+a)
+b)
+c)
+d)
+
+Å øke minnekapasiteten til maskinen.
+Å senke den gjennomsnittlige aksesstiden til minnet.
+Å skille mellom instruksjoner og data
+Å sørge for at alle prosessorer i en superdatamaskin har like data.
+
+4) Hvilket element er ikke en egenskap ved en seriell buss?
+a)
+b)
+c)
+d)
+
+En seriell buss krever at enhetene har en felles klokke.
+Overfører et bit om gangen.
+Kan være raskere enn en parallell buss.
+Benyttes av f.eks USB og Firewire.
+
+5) Hvilken av disse metodene er ikke en metode for å kontrolle I/O – enheter?
+a)
+b)
+c)
+d)
+
+Avbruddstyrt I/O
+Programstyrt I/O
+Direct Memory Access (DMA)
+Serielle registre
+
+6) Organisasjonen av en prosessor deles ofte i:
+a)
+b)
+c)
+d)
+
+Styreenhet og utførende enhet
+Register og aritmetisk-logisk enhet (eng: ALU)
+Minne og styreenhet
+Register og minne
+
+Side 3 av 11
+
+7) Hvilket av disse utsagnene om minne er ikke sant?
+a) Dynamisk RAM (DRAM) bruker kondensatorer for å lagre informasjon, og krever
+derfor oppfriskning med jevne mellomrom
+b) Statisk RAM (SRAM) bruker transistorer for å lagre informasjon, og krever derfor ikke
+oppfriskning.
+c) Statisk RAM bruker mindre areal enn dynamisk RAM per bit.
+d) Dynamisk RAM er som oftest organisert i en matrise med kolonner og rader.
+8) Hvilken påstand om three-state buffer er ikke sann?
+a) Three-state buffer brukes ofte i busser for å unngå at flere enheter driver bussen
+samtidig.
+b) Når et three-state buffer kobler en enhet av bussen kalles denne tilstanden for ’Z’.
+c) Three-state buffer kan bare brukes på serielle busser.
+d) Et three-state buffer har to tilstander: Tilkoblet og høy impedans.
+9) Hvilken av disse påstandene er ikke sann om arbitrering?
+a)
+b)
+c)
+d)
+
+Arbitrering styrer hvem som kan bruke bussen til enhver tid.
+Arbitrering kan være sentral eller desentralisert.
+”Daisy chaining” er en form for arbitrering.
+Arbitrering er ikke nødvendig dersom bussen er asynkron.
+
+10) Vektorisert avbrudd vil si at:
+a)
+b)
+c)
+d)
+
+At man har flere avbruddsrutiner, en for hvert avbrudd som kan komme.
+At man bruker vektor-registre for å behandle avbruddet.
+At avbruddshåndteringsrutinen får inn en vektor som første parameter.
+Flere avbrudd bruker samme avbruddsrutine.
+
+11) Hvilket utsagn om forgreningspredikering (eng: branch prediction) er ikke riktig?
+a)
+b)
+c)
+d)
+
+Forgreningspredikering er bare viktig for mikrokontrollere.
+Forgreningspredikering prøver å forutse om et hopp blir utført eller ikke.
+Forgreningspredigering benytter seg ofte av historiebits.
+Moderne forgreningspredikering er svært nøyaktig.
+
+12) Hvilken av disse påstandene er ikke sann om samlebånd?
+a)
+b)
+c)
+d)
+
+Man kan benytte høyere klokkefrekvens med samlebånd enn uten.
+Samlebånd krever at man tar spesielle hensyn til avhengigheter mellom instruksjoner.
+Samlebåndet er bare så raskt som det tregeste steget i samlebåndet.
+At en maskin bruker samlebånd må spesifiseres på ISA-nivå.
+
+Side 4 av 11
+
+13) Hva er det ISA ikke spesifiserer?
+a)
+b)
+c)
+d)
+
+Hvilke mikroinstruksjoner som finnes
+Hvilke registre som er tilgjengelig for programmereren..
+Hvilke datatyper som skal støttes av maskinvaren.
+Hvilke instruksjoner/opkoder som finnes.
+
+14) Hvilket av disse er ikke en adresseringsmodi?
+a)
+b)
+c)
+d)
+
+Direkte adressering
+Register adressering
+Register-indirekte adressering
+Hurtigbuffer (eng: cache) adressering
+
+15) Når man kaller en prosedyre kan man lagre returadressen på flere forskjellige måter.
+Hvilken av disse metodene gir størst fleksibilitet?
+a)
+b)
+c)
+d)
+
+Å lagre returadressen på stakken.
+Å lagre returadressen i et spesielt register.
+Å lagre returadressen i et spesielt minneområde.
+Å lagre returadressen i et spesielt minneområde, et område for hver funksjon.
+
+Oppgave 2 – Chip Multiprosessor (10% - 5% på a) og 5% på
+b)
+a) Nevn fire grunner til at flerkjerne prosessorer har blitt mer vanlig de siste årene
+b) Hva vil det si at en chip MultiProsessor har heterogene kjerner?
+
+Side 5 av 11
+
+Oppgave 3 – IJVM (30% - a, b og d teller 5% hver, c teller
+15%)
+Nødvendige detaljer til IJVM finnes bakerst i eksamenssettet. Registrene til IJVM er som
+følger (Alle tall er angitt på heksadesimal form):
+SP = 0x0100, H = 0x03FF, TOS = 0x0001, OPC = 0xFFFF
+a) Hva er den symbolske ekvivalenten til følgende mikroprogram?
+Instruksjon 1:
+Instruksjon 2:
+
+00 110101 100000000 000 0100
+00 111100 001000000 000 0111
+
+b) Hvilke verdier inneholder registrene etter at de to mikroinstruksjonen har kjørt?
+c) En ung student ønsker å skrive å legge til en ny instruksjon til IJVM. Instruksjonen heter
+IADDINC. IADDINC popper de to øverste elementene av stakken og summerer dem.
+Deretter legger den til 1 til svaret og legger svaret på toppen av stakken. De to opprinlige
+elementene blir borte.
+Han skriver følgende mikroprogram:
+iaddinc1 MAR = SP-1;rd
+iaddinc2 H = TOS
+iaddinc3 MDR = MDR + H + 1; wr: goto main1
+Programmet inneholder imidlertid to feil. Hva er de, og hva vil du gjøre for å rette på dem?
+d) Denne typen maskin er relativt treg, nevn tre ting man kan gjøre for å øke ytelsen til
+maskinen.
+
+Oppgave 4 – Avhengigheter (15% - 5% på a) og 10% på b))
+a) Hvilke typer avhengigheter har man mellom instruksjoner ?
+b) Gitt følgende kodesnutt:
+I1:
+I2:
+I3:
+I4:
+I5:
+
+Add
+Mul
+Sub
+Div
+Add
+
+R2, R1, R0
+R1, R4, R5
+R6, R2, R1
+R6, R0, R4
+R6, R6, R1
+
+Identifiser alle avhengigheter i kodesnutten, og angi typen avhengighet.
+
+Side 6 av 11
+
+Oppgave 5 (15% - 7,5 % på hver)
+a) Hva er forskjellen på 3-adresse instruksjoner, 2-adresse instruksjoner, 1-adresse
+instruksjoner og 0-adresse instruksjoner? Gi kodeeksempler
+b) Nevn fire forskjellige adresseringsmodi, og forklar hvordan de fungerer.
+
+Side 7 av 11
+
+VEDLEGG – IJVM arkitektur
+
+Side 8 av 11
+
+Side 9 av 11
+
+Side 10 av 11
+
+Side 11 av 11
+
+SVARARK – MULTIPLE CHOICE (Sett kryss)
+Riv ut dette arket og lever det sammen med besvarelsen.
+Oppgave
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+A)
+
+B)
+
+C)
+
+D)
+
+
