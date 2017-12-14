@@ -1,1 +1,0 @@
-const imageFolderPath = "images/";
