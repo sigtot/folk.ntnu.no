@@ -1,0 +1,37 @@
+body {
+  background-color:#fafbff;
+}
+
+.stuff-i-made h5, .stuff-i-made p{
+  width:100%;
+}
+
+.stuff-i-made h5 {
+  margin-bottom:0.3em;
+}
+
+.stuff-i-made p, .item-text p{
+  color:#666;
+  font-size:15px;
+  margin:0;
+}
+
+.stuff-i-made .card-block {
+  border-bottom: solid 1px #eee;
+  padding-top:1.5em;
+  padding-bottom:1.5em;
+}
+
+.item-image {
+  height:5em;
+}
+
+.item-image h3 {
+  display: inline-block;
+  width:auto;
+}
+
+
+.item-text div:first-of-type, .item-text div:last-of-type {
+  flex-grow: 1;
+}
