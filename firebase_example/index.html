@@ -1,0 +1,66 @@
+<!doctype HTML>
+<head>
+  <title>Firebase chat</title>
+
+</head>
+
+<html lang="no">
+<body>
+  <h1>Firebase chat</h1>
+  <div id="messageBox"></div>
+
+  <textarea id="textArea"></textarea>
+  <button id="sendButton">Send</button>
+
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCFhDUP2olDjI49vP-qCHx8InEu4MpQXj8",
+      authDomain: "fir-chat-f57b3.firebaseapp.com",
+      databaseURL: "https://fir-chat-f57b3.firebaseio.com",
+      projectId: "fir-chat-f57b3",
+      storageBucket: "",
+      messagingSenderId: "608197188788"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script>
+    // Get HTML elemnets
+    let textArea = document.getElementById("textArea");
+    let sendButton = document.getElementById("sendButton");
+    let messageBox = document.getElementById("messageBox");
+
+    // Generate a sender name
+    let sender = 'user-' + Math.round(Math.random() * 100000);
+
+    // Set firebase database and messages object
+    let db = firebase.database();
+    let messages = db.ref("messages");
+
+    // Send message to firebase when the send button is clicked
+    sendButton.onclick = function(){
+      // Create message object
+      let messageToSend = {
+        "sender": sender,
+        "message": textArea.value,
+      }
+
+      // Push message to firebase
+      messages.push(messageToSend);
+
+      // Clear textarea
+      textArea.value = "";
+    }
+
+    // Function to show recieved messages
+    function showMessage(snapshot){
+      let messageReceived = snapshot.val();
+      messageBox.innerHTML += "<p>" + messageReceived.sender + ": " + messageReceived.message + "</p>";
+    }
+
+    // Show received messages when new messages arrive
+    messages.on("child_added", showMessage);
+  </script>
+</body>
+</html>
